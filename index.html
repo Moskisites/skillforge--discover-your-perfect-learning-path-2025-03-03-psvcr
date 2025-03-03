@@ -3,10 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkillForge: Discover Your Perfect Learning Path</title>
     <meta name="description" content="Find the Right Course, Transform Your Future with SkillForge's personalized learning paths">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        .hover-scale { transition: transform 0.3s ease-in-out; }
+        .hover-scale:hover { transform: scale(1.05); }
+        .smooth-transition { transition: all 0.3s ease-in-out; }
+    </style>
 </head>
 <body class="font-sans antialiased">
     <!-- Announcement Bar -->
@@ -15,40 +29,42 @@
     </div>
 
     <!-- Header -->
-    <header class="sticky top-0 z-50 bg-white shadow-md" x-data="{ isOpen: false }">
+    <header class="sticky top-0 z-50 bg-white shadow-md">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                    <a href="/" class="text-2xl font-bold text-gray-800">SkillForge</a>
+                    <a href="https://Moskisites.github.io/skillforge--discover-your-perfect-learning-path-2025-03-03-psvcr" class="text-2xl font-bold text-gray-800 hover:text-indigo-600 transition duration-300">SkillForge</a>
                 </div>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#features" class="text-gray-600 hover:text-gray-900 transition duration-300">Features</a>
-                    <a href="#benefits" class="text-gray-600 hover:text-gray-900 transition duration-300">Benefits</a>
-                    <a href="#faq" class="text-gray-600 hover:text-gray-900 transition duration-300">FAQ</a>
-                    <a href="https://skillforge/checkout" class="bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
+                    <a href="#features" class="text-gray-600 hover:text-indigo-600 transition duration-300">Features</a>
+                    <a href="#benefits" class="text-gray-600 hover:text-indigo-600 transition duration-300">Benefits</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-indigo-600 transition duration-300">Testimonials</a>
+                    <a href="#about" class="text-gray-600 hover:text-indigo-600 transition duration-300">About Us</a>
+                    <a href="#faq" class="text-gray-600 hover:text-indigo-600 transition duration-300">FAQ</a>
+                    <a href="https://skillforge/checkout" class="bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-lg">
                         Get Started
                     </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button @click="isOpen = !isOpen" class="md:hidden">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path :class="{'hidden': isOpen, 'inline-flex': !isOpen }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{'hidden': !isOpen, 'inline-flex': isOpen }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </button>
-                </div>
-            </nav>
+                <button class="mobile-menu-button md:hidden" aria-label="Toggle menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
 
             <!-- Mobile Menu -->
-            <div :class="{'block': isOpen, 'hidden': !isOpen}" class="md:hidden">
-                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                    <a href="#features" class="block px-3 py-2 text-gray-600 hover:text-gray-900">Features</a>
-                    <a href="#benefits" class="block px-3 py-2 text-gray-600 hover:text-gray-900">Benefits</a>
-                    <a href="#faq" class="block px-3 py-2 text-gray-600 hover:text-gray-900">FAQ</a>
+            <div class="mobile-menu hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#features" class="block px-3 py-2 text-gray-600 hover:bg-gray-100 rounded transition duration-300">Features</a>
+                    <a href="#benefits" class="block px-3 py-2 text-gray-600 hover:bg-gray-100 rounded transition duration-300">Benefits</a>
+                    <a href="#testimonials" class="block px-3 py-2 text-gray-600 hover:bg-gray-100 rounded transition duration-300">Testimonials</a>
+                    <a href="#about" class="block px-3 py-2 text-gray-600 hover:bg-gray-100 rounded transition duration-300">About Us</a>
+                    <a href="#faq" class="block px-3 py-2 text-gray-600 hover:bg-gray-100 rounded transition duration-300">FAQ</a>
                 </div>
             </div>
+        </nav>
     </header>
 
     <!-- Hero Section -->
@@ -67,7 +83,7 @@
                 Find the Right Course, Transform Your Future
             </p>
             <a href="https://skillforge/checkout" 
-               class="inline-block bg-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
+               class="inline-block bg-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-indigo-700 transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
                 Start Learning Today
             </a>
         </div>
@@ -79,36 +95,36 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Premium Features</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <!-- Expert Reviews -->
-                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 transition duration-300">
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 transition duration-300 hover:shadow-xl">
                     <div class="text-indigo-600 mb-4">
                         <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold mb-4">Expert Reviews</h3>
-                    <p class="text-gray-600">Get detailed insights from industry experts to make informed learning decisions.</p>
+                    <p class="text-gray-600">Get detailed insights from industry experts to make informed learning decisions. Our expert panel carefully evaluates each course for quality and relevance.</p>
                 </div>
 
                 <!-- Custom Learning Paths -->
-                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 transition duration-300">
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 transition duration-300 hover:shadow-xl">
                     <div class="text-indigo-600 mb-4">
                         <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold mb-4">Custom Learning Paths</h3>
-                    <p class="text-gray-600">Personalized course recommendations based on your goals and experience.</p>
+                    <p class="text-gray-600">Personalized course recommendations based on your goals, experience level, and learning style. Our AI-powered system creates the perfect learning journey for you.</p>
                 </div>
 
                 <!-- Price Alerts -->
-                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 transition duration-300">
+                <div class="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 transition duration-300 hover:shadow-xl">
                     <div class="text-indigo-600 mb-4">
                         <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold mb-4">Price Alerts</h3>
-                    <p class="text-gray-600">Never miss a deal with customizable price drop notifications.</p>
+                    <p class="text-gray-600">Never miss a deal with customizable price drop notifications. Set your target price and let us monitor course prices across multiple platforms.</p>
                 </div>
             </div>
         </div>
@@ -120,16 +136,16 @@
         <div class="container mx-auto px-6 mb-24">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div class="order-2 md:order-1">
-                    <h2 class="text-3xl font-bold mb-6">Faster Career Growth</h2>
-                    <p class="text-gray-600 mb-8">Accelerate your career progression with targeted skills development and industry-recognized certifications.</p>
-                    <a href="https://skillforge/checkout" class="inline-block bg-indigo-600 text-white px-8 py-4 rounded-full hover:bg-indigo-700 transition duration-300">
+                    <h2 class="text-3xl font-bold mb-6">Accelerate Your Career Growth</h2>
+                    <p class="text-gray-600 mb-8">Take control of your professional development with our curated learning paths. Our platform helps you identify and master the most in-demand skills in your industry, leading to faster career advancement and higher earning potential. With personalized recommendations and expert guidance, you'll stay ahead of industry trends.</p>
+                    <a href="https://skillforge/checkout" class="inline-block bg-indigo-600 text-white px-8 py-4 rounded-full hover:bg-indigo-700 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-xl">
                         Start Learning
                     </a>
                 </div>
                 <div class="order-1 md:order-2">
                     <img src="https://images.unsplash.com/photo-1556740714-a8395b3bf30f?w=800&h=600&fit=crop&q=80" 
                          alt="Career Growth" 
-                         class="rounded-xl shadow-lg">
+                         class="rounded-xl shadow-lg hover:shadow-xl transition duration-300">
                 </div>
             </div>
         </div>
@@ -141,12 +157,12 @@
                     <div>
                         <img src="https://images.unsplash.com/photo-1502982720700-bfff97f2ecac?w=800&h=600&fit=crop&q=80" 
                              alt="Save Time and Money" 
-                             class="rounded-xl shadow-lg">
+                             class="rounded-xl shadow-lg hover:shadow-xl transition duration-300">
                     </div>
                     <div>
-                        <h2 class="text-3xl font-bold mb-6">Save Time & Money</h2>
-                        <p class="text-gray-600 mb-8">Optimize your learning investment with curated courses and exclusive discounts.</p>
-                        <a href="https://skillforge/checkout" class="inline-block bg-indigo-600 text-white px-8 py-4 rounded-full hover:bg-indigo-700 transition duration-300">
+                        <h2 class="text-3xl font-bold mb-6">Maximize Your Learning Investment</h2>
+                        <p class="text-gray-600 mb-8">Stop wasting time and money on courses that don't deliver results. Our platform helps you make informed decisions with comprehensive course comparisons, real student reviews, and exclusive discounts. Track your progress and ensure your learning journey aligns with your career goals.</p>
+                        <a href="https://skillforge/checkout" class="inline-block bg-indigo-600 text-white px-8 py-4 rounded-full hover:bg-indigo-700 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-xl">
                             Start Saving
                         </a>
                     </div>
@@ -158,17 +174,96 @@
         <div class="container mx-auto px-6 mt-24">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div class="order-2 md:order-1">
-                    <h2 class="text-3xl font-bold mb-6">Learn Confidently</h2>
-                    <p class="text-gray-600 mb-8">Make informed decisions with expert reviews and comprehensive course comparisons.</p>
-                    <a href="https://skillforge/checkout" class="inline-block bg-indigo-600 text-white px-8 py-4 rounded-full hover:bg-indigo-700 transition duration-300">
+                    <h2 class="text-3xl font-bold mb-6">Learn With Confidence</h2>
+                    <p class="text-gray-600 mb-8">Make every learning decision with complete confidence. Our platform provides detailed course analysis, expert reviews, and peer recommendations to ensure you choose the right path. Access comprehensive course previews and satisfaction guarantees to eliminate the guesswork from your educational journey.</p>
+                    <a href="https://skillforge/checkout" class="inline-block bg-indigo-600 text-white px-8 py-4 rounded-full hover:bg-indigo-700 transition duration-300 transform hover:scale-105 shadow-md hover:shadow-xl">
                         Get Started
                     </a>
                 </div>
                 <div class="order-1 md:order-2">
                     <img src="https://images.unsplash.com/photo-1471341971476-ae15ff5dd4ea?w=800&h=600&fit=crop&q=80" 
                          alt="Confident Learning" 
-                         class="rounded-xl shadow-lg">
+                         class="rounded-xl shadow-lg hover:shadow-xl transition duration-300">
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">What Our Users Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">"SkillForge helped me find the perfect data science course. The personalized recommendations were spot-on, and I landed a new job within 3 months of completing my learning path."</p>
+                    <p class="font-bold">Sarah Chen</p>
+                    <p class="text-sm text-gray-500">Data Scientist at Tech Corp</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">"The price alerts feature saved me over $500 on my web development courses. The expert reviews helped me avoid low-quality content and focus on what really matters."</p>
+                    <p class="font-bold">Michael Rodriguez</p>
+                    <p class="text-sm text-gray-500">Frontend Developer</p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">"As a career changer, SkillForge was invaluable in helping me plan my transition to UX design. The customized learning path made the journey less overwhelming."</p>
+                    <p class="font-bold">Emily Thompson</p>
+                    <p class="text-sm text-gray-500">UX Designer at Creative Agency</p>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">"The course comparison tools are fantastic. I could easily see which courses offered the best value and aligned with my learning style. Highly recommend!"</p>
+                    <p class="font-bold">James Wilson</p>
+                    <p class="text-sm text-gray-500">Product Manager</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">About SkillForge</h2>
+            <div class="max-w-3xl mx-auto">
+                <p class="text-gray-600 mb-8">
+                    Founded in 2020 by a team of education technology experts and industry professionals, SkillForge emerged from a simple observation: finding the right online courses shouldn't be overwhelming. Our founders experienced firsthand the challenges of navigating the vast landscape of online learning while trying to upskill their own teams. This inspired them to create a platform that would make professional development more accessible and effective for everyone.
+                </p>
+                <p class="text-gray-600">
+                    At SkillForge, our mission is to empower individuals to take control of their professional growth through personalized learning experiences. We believe in the power of education to transform lives and are committed to helping our users make informed decisions about their learning journey. Our core values of transparency, innovation, and user-centered design drive everything we do, from our course recommendations to our price alert system.
+                </p>
             </div>
         </div>
     </section>
@@ -178,10 +273,11 @@
         <div class="container mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Frequently Asked Questions</h2>
             <div class="max-w-3xl mx-auto space-y-6">
-                <div class="bg-white rounded-lg shadow-md" x-data="{ open: false }">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300" x-data="{ open: false }">
                     <button @click="open = !open" class="w-full px-6 py-4 text-left focus:outline-none">
                         <div class="flex items-center justify-between">
-                            <span class="text-lg font-semibold">How does SkillForge work?</span>
+                            <span class="text-lg font-semibold">How does SkillForge's course recommendation system work?</span>
                             <span class="transform transition-transform" :class="{'rotate-180': open}">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -190,22 +286,77 @@
                         </div>
                     </button>
                     <div x-show="open" class="px-6 pb-4">
-                        <p class="text-gray-600">SkillForge analyzes your goals and experience to create personalized learning paths, recommending the most relevant courses from top platforms.</p>
+                        <p class="text-gray-600">Our AI-powered system analyzes your goals, experience level, and learning style to create personalized course recommendations. We combine this with real user feedback and expert reviews to ensure you get the most relevant suggestions for your career path.</p>
                     </div>
                 </div>
-                <!-- Add more FAQ items as needed -->
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300" x-data="{ open: false }">
+                    <button @click="open = !open" class="w-full px-6 py-4 text-left focus:outline-none">
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-semibold">What types of courses does SkillForge cover?</span>
+                            <span class="transform transition-transform" :class="{'rotate-180': open}">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </div>
+                    </button>
+                    <div x-show="open" class="px-6 pb-4">
+                        <p class="text-gray-600">We cover a wide range of professional skills including technology, business, creative arts, and personal development. Our platform aggregates courses from major learning platforms and specialized providers to give you comprehensive options.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300" x-data="{ open: false }">
+                    <button @click="open = !open" class="w-full px-6 py-4 text-left focus:outline-none">
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-semibold">How do price alerts work?</span>
+                            <span class="transform transition-transform" :class="{'rotate-180': open}">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </div>
+                    </button>
+                    <div x-show="open" class="px-6 pb-4">
+                        <p class="text-gray-600">Set your desired price for any course, and we'll notify you when it goes on sale or drops below your target. Our system monitors prices 24/7 across multiple platforms to help you get the best deals.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300" x-data="{ open: false }">
+                    <button @click="open = !open" class="w-full px-6 py-4 text-left focus:outline-none">
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-semibold">Is there a satisfaction guarantee?</span>
+                            <span class="transform transition-transform" :class="{'rotate-180': open}">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </div>
+                    </button>
+                    <div x-show="open" class="px-6 pb-4">
+                        <p class="text-gray-600">Yes! We offer a 30-day satisfaction guarantee. If you're not happy with our recommendations or service, we'll provide a full refund no questions asked.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
     <section class="relative py-24">
-        <div class="absolute inset-0 bg-indigo-600 opacity-90"></div>
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&h=900&fit=crop&q=80" 
+                 alt="Learning Together" 
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-indigo-600 opacity-90"></div>
+        </div>
         <div class="relative container mx-auto px-6 text-center text-white">
             <h2 class="text-3xl md:text-4xl font-bold mb-8">Ready to Transform Your Future?</h2>
             <p class="text-xl mb-12">Join thousands of learners who have accelerated their careers with SkillForge</p>
             <a href="https://skillforge/checkout" 
-               class="inline-block bg-white text-indigo-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+               class="inline-block bg-white text-indigo-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
                 Get Started Now
             </a>
         </div>
@@ -218,24 +369,42 @@
                 <div>
                     <h3 class="text-xl font-bold mb-4">SkillForge</h3>
                     <p class="text-gray-400">Find the Right Course, Transform Your Future</p>
+                    <div class="mt-4 space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
                 </div>
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
                         <li><a href="#features" class="text-gray-400 hover:text-white transition duration-300">Features</a></li>
                         <li><a href="#benefits" class="text-gray-400 hover:text-white transition duration-300">Benefits</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition duration-300">Testimonials</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
                         <li><a href="#faq" class="text-gray-400 hover:text-white transition duration-300">FAQ</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Contact</h4>
-                    <p class="text-gray-400">info@skillforge.com</p>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">Email: info@skillforge.com</li>
+                        <li class="text-gray-400">Phone: (555) 123-4567</li>
+                        <li class="text-gray-400">Address: 123 Learning Street<br>Education City, ED 12345</li>
+                    </ul>
                 </div>
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Legal</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a></li>
+                        <li><a href="https://Moskisites.github.io/skillforge--discover-your-perfect-learning-path-2025-03-03-psvcr/privacy.html" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a></li>
+                        <li><a href="https://Moskisites.github.io/skillforge--discover-your-perfect-learning-path-2025-03-03-psvcr/terms.html" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a></li>
+                        <li><a href="https://Moskisites.github.io/skillforge--discover-your-perfect-learning-path-2025-03-03-psvcr/blog.html" class="text-gray-400 hover:text-white transition duration-300">Blog</a></li>
                     </ul>
                 </div>
             </div>
@@ -244,5 +413,22 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('header nav .mobile-menu-button');
+            const mobileMenu = document.querySelector('header nav .mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                });
+
+                const mobileMenuLinks = mobileMenu.
 </body>
 </html>
